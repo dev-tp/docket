@@ -1,19 +1,29 @@
 <script>
 	import {
+		ArrowDown,
+		ArrowUp,
+		ChevronDown,
 		CircleQuestionMark,
 		CircleUserRound,
 		CircleX,
 		Menu,
+		MessagesSquare,
+		Plus,
 		Search,
 		Timer
 	} from '@lucide/svelte';
 
 	/** @typedef {keyof icons} Icon */
 	const icons = {
+		ArrowDown,
+		ArrowUp,
+		ChevronDown,
 		CircleQuestionMark,
 		CircleUserRound,
 		CircleX,
 		Menu,
+		MessagesSquare,
+		Plus,
 		Search,
 		Timer
 	};
