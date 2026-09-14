@@ -23,12 +23,12 @@
 	</div>
 </div>
 <ul class="flex gap-4 py-2 text-sm">
-	<li>{@render tab('Last Activity', 'desc')}</li>
-	<li>{@render tab('My Projects')}</li>
-	<li>{@render tab('Project Type')}</li>
-	<li>{@render tab('Phase')}</li>
-	<li>{@render tab('Primary')}</li>
-	<li>{@render tab('Tags')}</li>
+	<li>{@render column('Last Activity', 'desc')}</li>
+	<li>{@render column('My Projects')}</li>
+	<li>{@render column('Project Type')}</li>
+	<li>{@render column('Phase')}</li>
+	<li>{@render column('Primary')}</li>
+	<li>{@render column('Tags')}</li>
 	<li><label><input type="checkbox" /> Show archived</label></li>
 	<li><label><input type="checkbox" /> Pinned only</label></li>
 	<li>0 projects</li>
@@ -39,17 +39,7 @@
 	<li><button class="text-xs text-teal-700">Clear filters</button></li>
 </ul>
 
-{#snippet filter(
-	/** @type {string} */
-	label
-)}
-	<div class="flex gap-1 rounded-sm border p-1 text-xs text-gray-500">
-		{label}
-		<button><Icon name="CircleX" /></button>
-	</div>
-{/snippet}
-
-{#snippet tab(
+{#snippet column(
 	/** @type {string} */
 	label,
 	/** @type {'asc' | 'desc' | undefined} */
@@ -64,4 +54,14 @@
 		{label}
 		<Icon name="ChevronDown" />
 	</button>
+{/snippet}
+
+{#snippet filter(
+	/** @type {string} */
+	label
+)}
+	<div class="flex gap-1 rounded-sm border p-1 text-xs text-gray-500">
+		{label}
+		<button><Icon name="CircleX" /></button>
+	</div>
 {/snippet}
