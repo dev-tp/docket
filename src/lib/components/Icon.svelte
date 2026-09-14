@@ -1,7 +1,9 @@
-<script>
+<script module>
 	import {
 		ArrowDown,
 		ArrowUp,
+		Calendar,
+		ChartNoAxesColumn,
 		ChevronDown,
 		ChevronFirst,
 		ChevronLast,
@@ -10,17 +12,26 @@
 		CircleQuestionMark,
 		CircleUserRound,
 		CircleX,
+		ClipboardCheck,
+		ClipboardList,
+		Contact,
+		Mailbox,
 		Menu,
 		MessagesSquare,
 		Plus,
 		Search,
-		Timer
+		SlidersHorizontal,
+		Timer,
+		Wrench,
+		X
 	} from '@lucide/svelte';
 
 	/** @typedef {keyof icons} Icon */
 	const icons = {
 		ArrowDown,
 		ArrowUp,
+		Calendar,
+		ChartNoAxesColumn,
 		ChevronDown,
 		ChevronFirst,
 		ChevronLast,
@@ -29,17 +40,35 @@
 		CircleQuestionMark,
 		CircleUserRound,
 		CircleX,
+		ClipboardCheck,
+		ClipboardList,
+		Contact,
+		Mailbox,
 		Menu,
 		MessagesSquare,
 		Plus,
 		Search,
-		Timer
+		SlidersHorizontal,
+		Timer,
+		Wrench,
+		X
 	};
 
-	/** @type {{ class?: string, name: Icon }} */
+	/**
+	 * @import { LucideProps } from '@lucide/svelte'
+	 * @import { Component } from 'svelte'
+	 *
+	 * @typedef {Object} Props
+	 * @property {string} [class]
+	 * @property {Icon} name
+	 */
+</script>
+
+<script>
+	/** @type {Props} */
 	const { name, ...props } = $props();
 
-	/** @type {import('svelte').Component<import('@lucide/svelte').LucideProps, {}, ''>} */
+	/** @type {Component<LucideProps, {}, ''>} */
 	const Icon = $derived(icons[name]);
 </script>
 
