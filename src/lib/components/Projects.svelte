@@ -24,7 +24,7 @@
 
 <table class="w-full bg-inherit text-sm">
 	<thead class="sticky top-0 bg-inherit">
-		<tr class="border-b border-gray-300 *:py-2 *:text-start *:font-normal">
+		<tr class="border-b border-gray-300 *:pb-2 *:text-start *:font-normal">
 			<th>Project Name</th>
 			<th>Project Type</th>
 			<th>Phase</th>
@@ -52,7 +52,7 @@
 		{/each}
 	</tbody>
 	<tfoot class="sticky bottom-0 w-full bg-inherit">
-		<tr class=" *:py-2">
+		<tr class="*:pt-2">
 			<td colspan="7">
 				<div class="flex w-full px-4">
 					<span>1 to 25 of 30</span>
