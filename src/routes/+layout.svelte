@@ -9,4 +9,6 @@
 <svelte:head><link rel="icon" href={favicon} /></svelte:head>
 
 <Nav />
-{@render children()}
+<div class="p-4">
+	{@render children()}
+</div>
