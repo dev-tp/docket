@@ -1,6 +1,18 @@
 <script>
 	import Icon from '$lib/components/Icon.svelte';
+	import Projects from '$lib/components/Projects.svelte';
 	import SearchBar from '$lib/components/SearchBar.svelte';
+
+	const projects = new Array(10).fill({
+		id: 1,
+		name: '... vs. Doe, John',
+		type: 'Personal Injury',
+		phase: 'Investigation',
+		tags: '#B',
+		primary: '',
+		lastActivity: 'Today',
+		dateCreated: 'Sep 11, 2026'
+	});
 </script>
 
 <div class="flex pb-2">
@@ -31,13 +43,16 @@
 	<li>{@render column('Tags')}</li>
 	<li><label><input type="checkbox" /> Show archived</label></li>
 	<li><label><input type="checkbox" /> Pinned only</label></li>
-	<li>0 projects</li>
+	<li class="font-bold">{projects.length} project(s)</li>
 </ul>
 <ul class="flex items-center gap-2 py-2">
 	<li>{@render filter('Countrywide Trial Lawyers, APLC')}</li>
 	<li>{@render filter('Personal Injury')}</li>
 	<li><button class="text-xs text-teal-700">Clear filters</button></li>
 </ul>
+<div class="mt-4 grow overflow-auto">
+	<Projects {projects} />
+</div>
 
 {#snippet column(
 	/** @type {string} */
