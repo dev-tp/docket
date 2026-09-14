@@ -22,6 +22,7 @@
 		Search,
 		SlidersHorizontal,
 		Timer,
+		UserSearch,
 		Wrench,
 		X
 	} from '@lucide/svelte';
@@ -50,6 +51,7 @@
 		Search,
 		SlidersHorizontal,
 		Timer,
+		UserSearch,
 		Wrench,
 		X
 	};

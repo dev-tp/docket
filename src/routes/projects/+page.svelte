@@ -27,12 +27,13 @@
 				Give feedback
 			</button>
 			<SearchBar placeholder="Search projects" />
-			<button
+			<a
 				class="flex items-center gap-1 rounded-sm bg-teal-500 py-1 pr-4 pl-2 text-white hover:bg-teal-600"
+				href="/projects/new"
 			>
 				<Icon name="Plus" />
 				Project
-			</button>
+			</a>
 		</div>
 	</div>
 	<ul class="flex gap-4 py-2 text-sm">
