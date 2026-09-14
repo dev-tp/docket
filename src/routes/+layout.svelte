@@ -8,7 +8,9 @@
 
 <svelte:head><link rel="icon" href={favicon} /></svelte:head>
 
-<Nav />
-<div class="p-4">
-	{@render children()}
+<div class="flex h-screen flex-col">
+	<Nav />
+	<div class="grow overflow-auto p-4">
+		{@render children()}
+	</div>
 </div>
