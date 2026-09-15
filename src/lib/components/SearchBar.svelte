@@ -2,6 +2,7 @@
 	/**
 	 * @typedef {Object} Props
 	 * @property {string} [placeholder]
+	 * @property {string} [value]
 	 */
 </script>
 
@@ -9,10 +10,11 @@
 	import Icon from './Icon.svelte';
 
 	/** @type {Props} */
-	const { placeholder = 'Search' } = $props();
+	let { placeholder = 'Search', value = $bindable('') } = $props();
 </script>
 
-<div class="flex items-center gap-2 rounded-xs border py-0.5 pl-2">
+<div class="flex items-center gap-2 rounded-xs border px-2 py-0.5">
 	<Icon name="Search" />
-	<input class="outline-none" type="search" {placeholder} />
+	<input bind:value class="outline-none" type="search" {placeholder} />
+	<button class:opacity-0={value === ''}><Icon name="CircleX" /></button>
 </div>
