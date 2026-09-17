@@ -1,6 +1,8 @@
 <script>
 	import Icon from '$lib/components/Icon.svelte';
 
+	const { children } = $props();
+
 	let showVitals = $state(true);
 	let showVitalHeaders = $state(false);
 
@@ -132,7 +134,9 @@
 			<li><button class="p-2"><Icon class="h-6 w-6" name="CircleCheck" /></button></li>
 			<li><button class="p-2"><Icon class="h-6 w-6" name="Bell" /></button></li>
 		</ul>
-		<div class="grow overflow-auto"></div>
+		<div class="grow overflow-auto">
+			{@render children()}
+		</div>
 		{#if showVitals}
 			<div class="flex w-75 flex-col gap-4 overflow-auto p-4 pb-0">
 				<div class="flex">
