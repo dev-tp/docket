@@ -3,16 +3,18 @@
 	import Projects from '$lib/components/Projects.svelte';
 	import SearchBar from '$lib/components/SearchBar.svelte';
 
-	const projects = new Array(100).fill({
-		id: 1,
-		name: '... vs. Doe, John',
-		type: 'Personal Injury',
-		phase: 'Investigation',
-		tags: '#B',
-		primary: '',
-		lastActivity: 'Today',
-		dateCreated: 'Sep 11, 2026'
-	});
+	const projects = [
+		{
+			id: 1,
+			name: '... vs. Doe, John',
+			type: 'Personal Injury',
+			phase: 'Investigation',
+			tags: '#B',
+			primary: '',
+			lastActivity: 'Today',
+			dateCreated: 'Sep 11, 2026'
+		}
+	];
 </script>
 
 <div class="flex h-full flex-col">
