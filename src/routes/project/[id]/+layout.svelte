@@ -48,8 +48,35 @@
 		</div>
 		<div class="grow"></div>
 		<div class="flex gap-2">
-			<select class="border px-2 py-1">
-				<option value="closed-dropped">Closed (Dropped)</option>
+			<select class="border px-2 py-1" name="phase">
+				<option value="intake">Intake</option>
+				<option value="investigation">Investigation</option>
+				<option value="treating">Treating</option>
+				<option value="done-treating">Done Treating</option>
+				<option value="records-received">Records Received</option>
+				<option value="demand-out">Demand Out</option>
+				<option value="negotiations">Negotiations</option>
+				<option value="settled-pre-lit">Settled (Pre-Lit)</option>
+				<option value="lit-filing-pro-discovery">Lit-Filing/Pro-Discovery</option>
+				<option value="lit-discovery">Lit-Discovery</option>
+				<option value="lit-pre-trial">Lit-Pre-Trial</option>
+				<option value="small-claims-lit">Small Claims - Lit</option>
+				<option value="settled-lit">Settled (Lit)</option>
+				<option value="lien-negotiations">Lien Negotiations</option>
+				<option value="prior-atty-liens">Prior Atty Liens</option>
+				<option value="disbursement-accounting">Disbursement - Accounting</option>
+				<option value="trust-hold-post-disbursement">Trust Hold - Post Disbursement</option>
+				<option value="judgment">Judgment</option>
+				<option value="to-refer-out">To Refer Out</option>
+				<option value="referred-out">Referred Out</option>
+				<option value="subbed-out">Subbed Out</option>
+				<option value="ial-atty-liens">IAL Atty Liens</option>
+				<option selected value="closed-dropped">Closed (Dropped)</option>
+				<option value="closed-settled">Closed (Settled)</option>
+				<option value="closed-referral-fee-received">Closed (Referral Fee Received)</option>
+				<option value="closed-judgment">Closed (Judgment)</option>
+				<option value="closed-lien-received">Closed (Lien Received)</option>
+				<option value="archived">Archived</option>
 			</select>
 			<button
 				class="flex items-center gap-2 rounded-sm bg-teal-500 px-4 py-1 text-white hover:bg-teal-600"
