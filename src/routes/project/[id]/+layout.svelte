@@ -1,5 +1,6 @@
 <script>
 	import Icon from '$lib/components/Icon.svelte';
+	import Nav from './Nav.svelte';
 
 	const { children } = $props();
 
@@ -77,53 +78,7 @@
 		</div>
 	{/if}
 	<div class="flex grow overflow-auto">
-		<div class="flex flex-col">
-			<div class="mb-2 flex items-center gap-2 border px-2 py-1">
-				<Icon name="ListFilter" />
-				<input class="outline-none" placeholder="Filter Menu" type="text" />
-			</div>
-			<ul class="overflow-auto">
-				<li><a href="/">Activity</a></li>
-				<li><a href="/">Billing</a></li>
-				<li><a href="/">Calendar</a></li>
-				<li><a href="/">Team</a></li>
-				<li><a href="/">CM Tasks</a></li>
-				<li><a href="/">Intake</a></li>
-				<li><a href="/">Docs</a></li>
-				<li><a href="/">Medicals</a></li>
-				<li><a href="/">Loss of Earnings</a></li>
-				<li><a href="/">Property Damage</a></li>
-				<li><a href="/">Negotiations</a></li>
-				<li><a href="/">Expenses</a></li>
-				<li><a href="/">Case Cost Funding</a></li>
-				<li><a href="/">Case Summary</a></li>
-				<li><a href="/">Treatment</a></li>
-				<li><a href="/">Insurance</a></li>
-				<li><a href="/">Liens</a></li>
-				<li><a href="/">Related Cases</a></li>
-				<li><a href="/">Contacts</a></li>
-				<li><a href="/">Parties</a></li>
-				<li><a href="/">Deadline Chain</a></li>
-				<li><a href="/">Hearing</a></li>
-				<li><a href="/">Trust Accounting</a></li>
-				<li><a href="/">Witnesses</a></li>
-				<li><a href="/">Settlement</a></li>
-				<li><a href="/">Damages</a></li>
-				<li><a href="/">Experts</a></li>
-				<li><a href="/">Depos</a></li>
-				<li><a href="/">Written Discovery</a></li>
-				<li><a href="/">Pleading Index</a></li>
-				<li><a href="/">Reminders</a></li>
-				<li><a href="/">Checks Received</a></li>
-				<li><a href="/">Conflicts</a></li>
-				<li><a href="/">Red Flags</a></li>
-				<li><a href="/">Negotiations (DNU)</a></li>
-			</ul>
-			<div class="flex flex-col">
-				<button class="text-start">Search</button>
-				<button class="text-start">Manage Sections</button>
-			</div>
-		</div>
+		<Nav />
 		<ul class="overflow-auto">
 			<li><button class="p-2"><Icon class="h-6 w-6" name="ArrowRight" /></button></li>
 			<li><button class="p-2"><Icon class="h-6 w-6" name="Zap" /></button></li>
