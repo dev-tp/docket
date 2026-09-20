@@ -12,6 +12,9 @@
 		{ label: 'Reminders', icon: 'Bell' }
 	];
 
+	/** @type {string} */
+	let active = $state('All');
+
 	/** @type {boolean} */
 	let open = $state(false);
 </script>
@@ -31,7 +34,11 @@
 	<ul>
 		{#each filters as filter}
 			<li>
-				<button class="flex h-10 w-full items-center gap-2 p-2 hover:bg-gray-200">
+				<button
+					class="flex h-10 w-full items-center gap-2 p-2 hover:bg-gray-200"
+					class:text-teal-700={active === filter.label}
+					onclick={() => (active = filter.label)}
+				>
 					<Icon class="h-5 w-5" name={filter.icon} />
 					<span class:hidden={!open}>{filter.label}</span>
 				</button>
