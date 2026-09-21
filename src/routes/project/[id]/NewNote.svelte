@@ -1,4 +1,5 @@
 <script>
+	import { clsx } from '$lib';
 	import Icon from '$lib/components/Icon.svelte';
 
 	let hasAttachment = $state(false);
@@ -7,19 +8,20 @@
 </script>
 
 <form
-	class="grid gap-4"
-	class:border={value !== ''}
-	class:border-gray-300={value !== ''}
-	class:p-4={value !== ''}
-	class:rounded-sm={value !== ''}
-	class:shadow-lg={value !== ''}
+	class={clsx('grid gap-4', value !== '' ? 'rounded-sm border border-gray-300 p-4 shadow-lg' : '')}
 >
 	<div class="flex items-center gap-2 border px-2 py-1">
 		<Icon name="StickyNote" />
 		<textarea bind:value class="field-sizing-content grow outline-none" placeholder="Write a note"
 		></textarea>
 	</div>
-	<div class="grid gap-4" class:hidden={value === ''}>
+	<div
+		class={clsx(
+			'grid',
+			hasAttachment || isMessage ? 'gap-4' : 'gap-2',
+			value === '' ? 'hidden' : ''
+		)}
+	>
 		<div>
 			<button class="flex items-center gap-2 text-sm text-teal-700">
 				<Icon name="Pencil" />
