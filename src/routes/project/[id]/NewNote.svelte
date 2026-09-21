@@ -60,9 +60,11 @@
 		{#if hasAttachment}
 			<div class="flex items-center gap-2">
 				<button onclick={() => (hasAttachment = false)}><Icon name="CircleX" /></button>
-				<div class="flex h-8 w-75 items-center gap-2 border px-2">
+				<div
+					class="flex h-8 w-75 items-center gap-2 border px-2 outline-teal-500 focus-within:border-teal-500 focus-within:outline"
+				>
 					<Icon name="Paperclip" />
-					<span class="text-gray-400">Attach a Project Document</span>
+					<input class="grow outline-none" placeholder="Attach a Project Document" type="text" />
 				</div>
 				<span class="text-sm">or</span>
 				<label class="flex cursor-pointer items-center gap-2 border px-2 py-1">
