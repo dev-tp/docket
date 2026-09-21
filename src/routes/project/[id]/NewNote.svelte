@@ -10,7 +10,14 @@
 <form
 	class={clsx('grid gap-4', value !== '' ? 'rounded-sm border border-gray-300 p-4 shadow-lg' : '')}
 >
-	<div class="flex items-center gap-2 border px-2 py-1">
+	<div
+		class={clsx(
+			'flex items-center gap-2 border px-2 py-1',
+			value !== ''
+				? ' focus-within:border-teal-500 focus-within:outline focus-within:outline-teal-500'
+				: ''
+		)}
+	>
 		<Icon name="StickyNote" />
 		<textarea bind:value class="field-sizing-content grow outline-none" placeholder="Write a note"
 		></textarea>
