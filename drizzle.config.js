@@ -1,13 +1,17 @@
 import { defineConfig } from 'drizzle-kit';
 
-if (!process.env.DATABASE_URL) {
-	throw new Error('DATABASE_URL is not set');
+const { POSTGRES_DB, POSTGRES_HOST, POSTGRES_PASSWORD, POSTGRES_USER } = process.env;
+
+if (!POSTGRES_DB || !POSTGRES_HOST || !POSTGRES_PASSWORD || !POSTGRES_USER) {
+	throw new Error('Postgres environment variables are not set');
 }
+
+const url = `postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@${POSTGRES_HOST}:5432/${POSTGRES_DB}`;
 
 export default defineConfig({
 	schema: './src/lib/server/db/schema.js',
 	dialect: 'postgresql',
-	dbCredentials: { url: process.env.DATABASE_URL },
+	dbCredentials: { url },
 	verbose: true,
 	strict: true
 });
