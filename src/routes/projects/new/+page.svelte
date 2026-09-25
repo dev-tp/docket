@@ -4,10 +4,10 @@
 
 <h1 class="mb-4 text-xl">New Project</h1>
 <div class="m-auto w-1/3">
-	<form class="grid gap-4">
+	<form class="grid gap-4" method="POST">
 		<label class="flex flex-col">
 			<span>Project Type<span>*</span></span>
-			<select class="border px-2 py-1 text-base">
+			<select class="border px-2 py-1 text-base" name="type">
 				<option value="Personal Injury">Personal Injury</option>
 			</select>
 		</label>
@@ -15,7 +15,12 @@
 			<span>Add Client</span>
 			<div class="flex gap-2">
 				<div class="grow">
-					<input class="w-full border px-2 py-1" placeholder="Search for client" type="text" />
+					<input
+						class="w-full border px-2 py-1"
+						name="client"
+						placeholder="Search for client"
+						type="text"
+					/>
 				</div>
 				<button class="rounded-sm border px-2"><Icon name="UserSearch" /></button>
 			</div>
@@ -23,7 +28,7 @@
 		<label>
 			<span>Project Name</span>
 			<div>
-				<input class="w-full border px-2 py-1" placeholder="Project Name" type="text" />
+				<input class="w-full border px-2 py-1" name="name" placeholder="Project Name" type="text" />
 			</div>
 		</label>
 		<label>
@@ -31,6 +36,7 @@
 			<div>
 				<input
 					class="w-full border px-2 py-1"
+					name="team"
 					placeholder="Team name or team description"
 					type="text"
 				/>

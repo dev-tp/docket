@@ -3,7 +3,7 @@
 	import Nav from './Nav.svelte';
 	import QuickFilters from './QuickFilters.svelte';
 
-	const { children } = $props();
+	const { children, data } = $props();
 
 	let showVitals = $state(true);
 	let showVitalHeaders = $state(false);
@@ -31,7 +31,7 @@
 <div class="flex h-full flex-col">
 	<div class="mb-4 flex items-start">
 		<div class="grid gap-2">
-			<h1 class="text-xl">... vs Doe, John</h1>
+			<h1 class="text-xl">{data.project?.name}</h1>
 			<div class="flex gap-4 text-sm">
 				<button class="flex items-center gap-2">
 					<Icon name="Contact" />

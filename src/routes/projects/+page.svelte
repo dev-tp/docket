@@ -3,18 +3,7 @@
 	import Projects from '$lib/components/Projects.svelte';
 	import SearchBar from '$lib/components/SearchBar.svelte';
 
-	const projects = [
-		{
-			id: 1,
-			name: '... vs. Doe, John',
-			type: 'Personal Injury',
-			phase: 'Investigation',
-			tags: '#B',
-			primary: '',
-			lastActivity: 'Today',
-			dateCreated: 'Sep 11, 2026'
-		}
-	];
+	const { data } = $props();
 </script>
 
 <div class="flex h-full flex-col">
@@ -47,7 +36,7 @@
 		<li>{@render column('Tags')}</li>
 		<li><label><input type="checkbox" /> Show archived</label></li>
 		<li><label><input type="checkbox" /> Pinned only</label></li>
-		<li class="font-bold">{projects.length} project(s)</li>
+		<li class="font-bold">{data.projects.length} project(s)</li>
 	</ul>
 	<ul class="flex items-center gap-2 py-2">
 		<li>{@render filter('Countrywide Trial Lawyers, APLC')}</li>
@@ -55,7 +44,7 @@
 		<li><button class="text-xs text-teal-700">Clear filters</button></li>
 	</ul>
 	<div class="mt-4 grow overflow-auto bg-white">
-		<Projects {projects} />
+		<Projects projects={data.projects} />
 	</div>
 </div>
 

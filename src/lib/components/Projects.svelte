@@ -1,14 +1,6 @@
 <script module>
 	/**
-	 * @typedef {Object} Project
-	 * @property {number} id
-	 * @property {string} name
-	 * @property {string} type
-	 * @property {string} phase
-	 * @property {string} tags
-	 * @property {string} primary
-	 * @property {string} lastActivity
-	 * @property {string} dateCreated
+	 * @import { Project } from '$lib/server/db/schema'
 	 *
 	 * @typedef {Object} Props
 	 * @property {Project[]} projects
