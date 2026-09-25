@@ -2,7 +2,6 @@
 	import { page } from '$app/state';
 	import Icon from '$lib/components/Icon.svelte';
 	import Nav from './Nav.svelte';
-	import QuickFilters from './QuickFilters.svelte';
 
 	const { children, data } = $props();
 
@@ -91,7 +90,6 @@
 	{/if}
 	<div class="flex grow overflow-auto">
 		<Nav />
-		<QuickFilters />
 		<div class="grow overflow-auto">
 			{@render children()}
 		</div>
