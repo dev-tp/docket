@@ -36,4 +36,6 @@ await db
 		{ name: 'Archived' }
 	]);
 
+await db.insert(schema.projectType).values([{ name: 'Personal Injury' }]);
+
 db.$client.end();

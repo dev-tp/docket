@@ -1,5 +1,7 @@
 <script>
 	import Icon from '$lib/components/Icon.svelte';
+
+	const { data } = $props();
 </script>
 
 <h1 class="mb-4 text-xl">New Project</h1>
@@ -8,7 +10,9 @@
 		<label class="flex flex-col">
 			<span>Project Type<span>*</span></span>
 			<select class="border px-2 py-1 text-base" name="type">
-				<option value="Personal Injury">Personal Injury</option>
+				{#each data.projectTypes as projectType}
+					<option value={projectType.id}>{projectType.name}</option>
+				{/each}
 			</select>
 		</label>
 		<label>

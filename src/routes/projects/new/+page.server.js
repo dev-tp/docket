@@ -14,7 +14,7 @@ export const actions = {
 				name: formData.get('name')?.toString() || '',
 				client: formData.get('client')?.toString() || '',
 				team: formData.get('team')?.toString() || '',
-				type: formData.get('type')?.toString() || '',
+				typeId: parseInt(formData.get('type')?.toString() || '0'),
 				tags: '',
 				primary: ''
 			})
@@ -27,3 +27,10 @@ export const actions = {
 		fail(400, 'Transaction failed');
 	}
 };
+
+/** @type {import('./$types').PageServerLoad} */
+export async function load() {
+	return {
+		projectTypes: await db.query.projectType.findMany()
+	};
+}

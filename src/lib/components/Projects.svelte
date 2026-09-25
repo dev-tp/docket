@@ -32,7 +32,7 @@
 				<td>
 					<a class="text-sky-600 hover:underline" href="/project/{project.id}">{project.name}</a>
 				</td>
-				<td class="font-bold">{project.type}</td>
+				<td class="font-bold">{project.typeId}</td>
 				<td class="font-bold">{project.phaseId}</td>
 				<td>
 					<span class="rounded-full bg-gray-500 px-1 text-xs text-white">{project.tags}</span>
