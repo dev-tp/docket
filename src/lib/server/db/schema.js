@@ -7,9 +7,15 @@ export const project = pgTable('project', {
 	client: text('client').default('').notNull(),
 	team: text('team').default('').notNull(),
 	type: text('type').default('').notNull(),
-	phase: text('phase').default('').notNull(),
+	phaseId: serial('phase_id').references(() => projectPhase.id),
 	tags: text('tags').default('').notNull(),
 	primary: text('primary').default('').notNull(),
 	lastActivity: date('last_activity').defaultNow().notNull(),
 	dateCreated: date('date_created').defaultNow().notNull()
+});
+
+/** @typedef {typeof projectPhase.$inferSelect} ProjectPhase */
+export const projectPhase = pgTable('project_phase', {
+	id: serial('id').primaryKey(),
+	name: text('name').notNull()
 });
