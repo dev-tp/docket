@@ -1,6 +1,7 @@
 <script>
 	import { page } from '$app/state';
 	import Icon from '$lib/components/Icon.svelte';
+	import EditableHeader from './EditableHeader.svelte';
 	import Nav from './Nav.svelte';
 
 	const { children, data } = $props();
@@ -31,7 +32,13 @@
 <div class="flex h-full flex-col">
 	<div class="mb-4 flex items-start">
 		<div class="grid gap-2">
-			<h1 class="text-xl">{data.project?.name}</h1>
+			<div>
+				<EditableHeader
+					request="/api/project/{page.params.id}"
+					setRequestOptions={(value) => ({ body: JSON.stringify({ name: value }), method: 'PUT' })}
+					value={data.project?.name}
+				/>
+			</div>
 			<div class="flex gap-4 text-sm">
 				<button class="flex items-center gap-2">
 					<Icon name="Contact" />
