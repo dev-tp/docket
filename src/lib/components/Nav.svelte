@@ -25,7 +25,7 @@
 </nav>
 
 {#if open}
-	<div class="fixed top-0 bottom-0 z-10 flex min-w-75 flex-col bg-sky-900 text-white">
+	<div class="fixed top-0 bottom-0 z-20 flex min-w-75 flex-col bg-sky-900 text-white">
 		<div class="flex items-center p-4">
 			<button onclick={() => (open = false)}>
 				<Icon class="h-6 w-6" name="X" />
@@ -48,6 +48,11 @@
 			<button>Configure</button>
 		</div>
 	</div>
+	<button
+		class="fixed inset-0 z-10 cursor-default! bg-black/50 backdrop-blur-xs"
+		onclick={() => (open = false)}
+		title="Close menu"
+	></button>
 {/if}
 
 {#snippet sidebarButton(
