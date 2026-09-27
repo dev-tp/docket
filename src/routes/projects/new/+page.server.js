@@ -15,6 +15,7 @@ export const actions = {
 				client: formData.get('client')?.toString() || '',
 				team: formData.get('team')?.toString() || '',
 				typeId: parseInt(formData.get('type')?.toString() || '0'),
+				phaseId: 1,
 				tags: '',
 				primary: ''
 			})
