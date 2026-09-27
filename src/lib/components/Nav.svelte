@@ -21,6 +21,9 @@
 	];
 
 	/** @type {boolean} */
+	let configureMode = $state(false);
+
+	/** @type {boolean} */
 	let open = $state(false);
 </script>
 
@@ -48,32 +51,54 @@
 {#if open}
 	<div class="fixed top-0 bottom-0 z-20 flex min-w-75 flex-col bg-sky-900 text-white">
 		<div class="flex min-h-16 items-center px-4">
-			<button onclick={() => (open = false)}>
+			<button
+				onclick={() => {
+					configureMode = false;
+					open = false;
+				}}
+			>
 				<Icon class="h-6 w-6" name="X" />
 			</button>
 		</div>
 		<ul class="overflow-auto">
 			{#each links as link}
-				{#if !link.isDocked}
-					<a
-						class="flex w-full items-center gap-2 p-4"
-						href={link.route}
-						onclick={() => (open = false)}
-					>
-						<Icon class="h-6 w-6" name={link.icon} />
-						{link.label}
-					</a>
+				{#if !link.isDocked || configureMode}
+					{#if configureMode}
+						<div class="flex w-full items-center gap-2 p-4">
+							<Icon class="h-6 w-6" name={link.icon} />
+							<span class="grow">{link.label}</span>
+							<Icon name="GripVertical" />
+						</div>
+					{:else}
+						<a
+							class="flex w-full items-center gap-2 p-4"
+							href={link.route}
+							onclick={() => (open = false)}
+						>
+							<Icon class="h-6 w-6" name={link.icon} />
+							{link.label}
+						</a>
+					{/if}
 				{/if}
 			{/each}
 		</ul>
 		<div class="grow"></div>
-		<div class="flex items-center justify-end p-4 text-sm">
-			<button>Configure</button>
+		<div class="flex items-center p-4 text-sm">
+			{#if configureMode}
+				<button>Reset</button>
+			{/if}
+			<div class="grow"></div>
+			<button onclick={() => (configureMode = !configureMode)}>
+				{configureMode ? 'Done' : 'Configure'}
+			</button>
 		</div>
 	</div>
 	<button
 		class="fixed inset-0 z-10 cursor-default! bg-black/50 backdrop-blur-xs"
-		onclick={() => (open = false)}
+		onclick={() => {
+			configureMode = false;
+			open = false;
+		}}
 		title="Close menu"
 	></button>
 {/if}
