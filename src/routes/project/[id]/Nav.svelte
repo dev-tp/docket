@@ -43,21 +43,35 @@
 
 	/** @type {string} */
 	const path = `/project/${page.params.id}`;
+
+	/** @type {string} */
+	let query = $state('');
 </script>
 
 <div class="flex flex-col">
 	<div class="mb-2 flex items-center gap-2 border px-2 py-1">
 		<Icon name="ListFilter" />
-		<input class="outline-none" placeholder="Filter Menu" type="text" />
+		<input bind:value={query} class="outline-none" placeholder="Filter Menu" type="text" />
+		<button class:opacity-0={query === ''} onclick={() => (query = '')}><Icon name="X" /></button>
 	</div>
 	<ul class="overflow-auto">
 		{#each links as link}
-			<li>
-				<a class="flex items-center gap-2 px-2 py-1 hover:bg-gray-200" href="{path}/{link.route}">
-					<Icon name={link.icon} />
-					{link.label}
-				</a>
-			</li>
+			{@const label = link.label.toLowerCase()}
+			{@const value = query.toLowerCase()}
+			{@const start = label.indexOf(value)}
+			{@const end = start + query.length}
+			{#if label.includes(value)}
+				<li>
+					<a class="flex items-center gap-2 px-2 py-1 hover:bg-gray-200" href="{path}/{link.route}">
+						<Icon name={link.icon} />
+						<span>
+							{link.label.substring(0, start)}<span class="bg-yellow-500"
+								>{link.label.substring(start, end)}</span
+							>{link.label.substring(end, link.label.length)}
+						</span>
+					</a>
+				</li>
+			{/if}
 		{/each}
 	</ul>
 	<div class="flex flex-col">
