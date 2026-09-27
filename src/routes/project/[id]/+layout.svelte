@@ -118,15 +118,33 @@
 						Edit
 					</button>
 				</div>
-				<div class="grow overflow-auto">
-					<div class="mb-2 border-b border-teal-700 text-teal-700">
-						<button class="border border-b-0 border-inherit bg-teal-500 px-4 py-2 text-white">
+				<div class="group grow overflow-auto">
+					<div
+						class="sticky top-0 mb-2 flex gap-1 border-b border-teal-700 text-teal-700 backdrop-blur-lg *:cursor-pointer *:border *:border-b-0 *:border-inherit *:px-4 *:py-2"
+					>
+						<label
+							class="group-has-[#tab-1:checked]:bg-teal-500 group-has-[#tab-1:checked]:text-white"
+							for="tab-1"
+						>
 							Vitals
-						</button>
-						<button class="border border-b-0 px-4 py-2">Details</button>
-						<button class="border border-b-0 px-4 py-2">Settings</button>
+						</label>
+						<label
+							class="group-has-[#tab-2:checked]:bg-teal-500 group-has-[#tab-2:checked]:text-white"
+							for="tab-2"
+						>
+							Details
+						</label>
+						<label
+							class="group-has-[#tab-3:checked]:bg-teal-500 group-has-[#tab-3:checked]:text-white"
+							for="tab-3"
+						>
+							Settings
+						</label>
 					</div>
-					<div class="text-sm">
+					<input class="peer/tab-1 sr-only" id="tab-1" name="vitals" type="radio" checked />
+					<input class="peer/tab-2 sr-only" id="tab-2" name="vitals" type="radio" />
+					<input class="peer/tab-3 sr-only" id="tab-3" name="vitals" type="radio" />
+					<div class="hidden text-sm peer-checked/tab-1:block">
 						<div class="grid grid-cols-2 gap-2">
 							{#each Object.entries(vitalHeaders) as [header, value]}
 								<div class="text-sky-700">{header}</div>
@@ -134,6 +152,8 @@
 							{/each}
 						</div>
 					</div>
+					<div class="hidden text-sm peer-checked/tab-2:block">Details</div>
+					<div class="hidden text-sm peer-checked/tab-3:block">Settings</div>
 				</div>
 				<div class="flex">
 					<button class="flex items-center gap-2">
