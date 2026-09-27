@@ -38,8 +38,8 @@
 					<span class="rounded-full bg-gray-500 px-1 text-xs text-white">{project.tags}</span>
 				</td>
 				<td class="font-bold">{project.primary}</td>
-				<td>{project.lastActivity}</td>
-				<td>{project.dateCreated}</td>
+				<td>{project.lastActivity.toLocaleDateString()}</td>
+				<td>{project.dateCreated.toLocaleDateString()}</td>
 			</tr>
 		{/each}
 	</tbody>

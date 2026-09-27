@@ -1,4 +1,4 @@
-import { pgTable, date, serial, text } from 'drizzle-orm/pg-core';
+import { pgTable, serial, text, timestamp } from 'drizzle-orm/pg-core';
 
 /** @typedef {typeof project.$inferSelect} Project */
 export const project = pgTable('project', {
@@ -10,8 +10,11 @@ export const project = pgTable('project', {
 	phaseId: serial('phase_id').references(() => projectPhase.id),
 	tags: text('tags').default('').notNull(),
 	primary: text('primary').default('').notNull(),
-	lastActivity: date('last_activity').defaultNow().notNull(),
-	dateCreated: date('date_created').defaultNow().notNull()
+	lastActivity: timestamp('last_activity')
+		.defaultNow()
+		.notNull()
+		.$onUpdate(() => new Date()),
+	dateCreated: timestamp('date_created').defaultNow().notNull()
 });
 
 /** @typedef {typeof projectPhase.$inferSelect} ProjectPhase */
