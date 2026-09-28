@@ -39,7 +39,6 @@
 		{ label: 'Checks Received', route: 'checks-received', icon: 'CreditCardCheck' },
 		{ label: 'Conflicts', route: 'conflicts', icon: 'GitMergeConflict' },
 		{ label: 'Red Flags', route: 'red-flags', icon: 'Flag' },
-		{ label: 'Negotiations (DNU)', route: 'negotiations-dnu', icon: 'Scale' }
 	];
 
 	/** @type {string} */
