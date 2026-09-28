@@ -2,6 +2,7 @@
 	import { page } from '$app/state';
 	import Icon from '$lib/components/Icon.svelte';
 
+	// TODO Sections are user generated. "Negotiations (DNU)" is a page created from Advanced
 	/** @type {{ label: string, route: string, icon: import('$lib/components/Icon.svelte').Icon}[]} */
 	const links = [
 		{ label: 'Activity', route: '', icon: 'MessagesSquare' },

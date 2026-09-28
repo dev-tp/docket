@@ -58,6 +58,7 @@
 			<hr class="text-gray-400" />
 		{/if}
 		{#if hasAttachment}
+			<!-- TODO You can only add one attachment at a time; make this available after there is an upload -->
 			<div class="flex items-center gap-2">
 				<button onclick={() => (hasAttachment = false)}><Icon name="CircleX" /></button>
 				<div
@@ -84,8 +85,11 @@
 					<Icon name="MessageSquare" />
 				</button>
 				<button type="button"><Icon name="ClockPlus" /></button>
+				<!-- TODO Clikcing tag, adds an at-sign tag on the prompt -->
 				<button type="button"><Icon name="AtSign" /></button>
+				<!-- TODO Clikcing tag, adds a hash tag on the prompt -->
 				<button type="button"><Icon name="Tag" /></button>
+				<!-- TODO Add a button to +@ to mention someone -->
 			</div>
 			<div class="grow"></div>
 			<button class="bg-teal-500 px-4 py-1 text-white" type="submit">Create</button>
