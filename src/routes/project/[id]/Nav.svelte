@@ -2,6 +2,7 @@
 	import { page } from '$app/state';
 	import Icon from '$lib/components/Icon.svelte';
 
+	// TODO Sections are user generated. "Negotiations (DNU)" is a page created from Advanced
 	/** @type {{ label: string, route: string, icon: import('$lib/components/Icon.svelte').Icon}[]} */
 	const links = [
 		{ label: 'Activity', route: '', icon: 'MessagesSquare' },
@@ -38,7 +39,6 @@
 		{ label: 'Checks Received', route: 'checks-received', icon: 'CreditCardCheck' },
 		{ label: 'Conflicts', route: 'conflicts', icon: 'GitMergeConflict' },
 		{ label: 'Red Flags', route: 'red-flags', icon: 'Flag' },
-		{ label: 'Negotiations (DNU)', route: 'negotiations-dnu', icon: 'Scale' }
 	];
 
 	/** @type {string} */
