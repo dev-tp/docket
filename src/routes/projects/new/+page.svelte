@@ -1,5 +1,5 @@
 <script>
-	import Icon from '$lib/components/Icon.svelte';
+	import NewContact from './NewContact.svelte';
 
 	const { data } = $props();
 </script>
@@ -25,7 +25,7 @@
 					type="text"
 				/>
 			</div>
-			<button class="rounded-sm border px-2" type="button"><Icon name="UserSearch" /></button>
+			<NewContact />
 		</div>
 	</label>
 	<label>
