@@ -7,6 +7,32 @@
 	import PhoneFieldSet from './PhoneFieldSet.svelte';
 </script>
 
+<header class="mb-4 flex">
+	<div class="grid gap-2">
+		<h2 class="text-xl">Edit Contact</h2>
+		<div class="flex gap-4 text-sm text-teal-700">
+			<div class="flex items-center gap-2 rounded-sm border px-1 text-gray-500">
+				Client
+				<button type="button"><Icon name="CircleX" /></button>
+			</div>
+			<button class="flex items-center gap-1" type="button">
+				<Icon name="Plus" />
+				Contact Type
+			</button>
+			<button class="flex items-center gap-1" type="button">
+				<Icon name="Pencil" />
+				Add Tags
+			</button>
+		</div>
+	</div>
+	<div class="grow"></div>
+	<div class="flex items-start gap-2">
+		<button class="min-w-20 border py-1" formnovalidate type="submit" value="cancel">Cancel</button>
+		<button class="min-w-20 border border-black bg-teal-700 py-1 text-white" type="submit">
+			Save
+		</button>
+	</div>
+</header>
 <Tabs
 	content={[
 		{ icon: 'Info', label: 'Contact Information', content: contactInformation },
