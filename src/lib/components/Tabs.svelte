@@ -25,7 +25,7 @@
 	{#each tabs as tab, i}
 		<button
 			class={clsx(
-				'flex items-center gap-2 border border-b-0 p-2',
+				'flex items-center gap-2 border border-b-0 px-2 py-1',
 				selected === i ? 'border-red-500 bg-red-500 text-white' : ''
 			)}
 			onclick={() => (selected = i)}
